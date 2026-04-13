@@ -366,22 +366,131 @@
       font-size: 13px;
     }
     
-    /* Responsive */
+    /* Responsive - Mobile Optimized */
     @media (max-width: 1024px) {
-      .products-grid { grid-template-columns: repeat(3, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
+      /* 容器 */
       .container { padding: 0 20px; }
-      .hero { height: 400px; }
-      .hero h1 { font-size: 32px; }
-      .header-inner { flex-direction: column; gap: 15px; }
-      nav ul { flex-wrap: wrap; justify-content: center; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
-      .products-grid { grid-template-columns: repeat(2, 1fr); }
-      .features-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      
+      /* 隐藏顶部栏 */
+      .top-bar { display: none; }
+      
+      /* Header */
+      .header-inner { 
+        flex-direction: column; 
+        gap: 10px; 
+        padding: 15px 0;
+      }
+      .logo h1 { font-size: 18px; }
+      .logo span { font-size: 10px; }
+      .logo-icon { width: 40px; height: 40px; font-size: 16px; }
+      
+      /* 导航 - 手机端更精简 */
+      nav { 
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      nav ul { 
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0;
+      }
+      nav a {
+        padding: 12px 18px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      
+      /* Hero - 手机端适配 */
+      .hero { 
+        height: 320px; 
+        padding: 30px 0;
+      }
+      .hero h1 { 
+        font-size: 26px; 
+        line-height: 1.3;
+      }
+      .hero p { 
+        font-size: 14px; 
+        margin-bottom: 25px;
+      }
+      .hero-btn {
+        padding: 12px 30px;
+        font-size: 13px;
+      }
+      
+      /* Stats */
+      .stats-bar { padding: 25px 0; }
+      .stats-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+      }
+      .stat-item h3 { font-size: 28px; }
+      .stat-item p { font-size: 11px; }
+      
+      /* Section标题 */
+      .section { padding: 40px 0; }
+      .section-header { margin-bottom: 30px; }
+      .section-header h2 { font-size: 24px; }
+      .section-header p { font-size: 13px; }
+      
+      /* 产品 - 手机端1列，更大更清晰 */
+      .products-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        padding: 0 15px;
+      }
+      .product-card img {
+        height: 200px;
+      }
+      .product-info {
+        padding: 20px;
+      }
+      .product-info h3 { font-size: 16px; }
+      .product-info p { font-size: 13px; }
+      
+      /* Features */
+      .features { padding: 40px 0; }
+      .features h2 { 
+        font-size: 24px; 
+        margin-bottom: 30px;
+      }
+      .features-grid { grid-template-columns: 1fr; gap: 25px; }
+      .feature-icon { width: 60px; height: 60px; font-size: 24px; }
+      .feature-item h3 { font-size: 16px; }
+      .feature-item p { font-size: 13px; }
+      
+      /* About */
+      .about { padding: 40px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .about-content h2 { font-size: 24px; }
+      .about-content p { font-size: 14px; line-height: 1.7; }
+      .about-stats { 
+        flex-wrap: wrap; 
+        gap: 20px;
+        justify-content: center;
+      }
+      .about-stat h3 { font-size: 28px; }
+      .about-image { gap: 10px; }
+      .about-image img { height: 120px; }
+      .about-image img:first-child { height: 150px; }
+      
+      /* Contact */
+      .contact { padding: 40px 0; }
+      .contact h2 { font-size: 24px; margin-bottom: 30px; }
+      .contact-grid { 
+        grid-template-columns: 1fr; 
+        gap: 25px;
+      }
+      .contact-item h3 { font-size: 14px; margin-bottom: 10px; }
+      .contact-item p { font-size: 13px; }
+      
+      /* Footer */
+      footer { padding: 20px 0; }
+      footer p { font-size: 12px; }
     }
   </style>
 </head>
