@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>苏州鑫宇盛进出口有限公司 - SUZHOU XINYUSENG IMPORT AND EXPORT CO., LTD.</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    
+    /* 顶部导航 */
+    .top-bar {
+      background: #2c3e50;
+      color: #fff;
+      padding: 8px 0;
+      font-size: 12px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .top-bar .container { display: flex; justify-content: space-between; }
+    
+    /* 主导航 */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo img {
+      height: 60px;
+    }
+    .logo-text h1 {
+      font-size: 18px;
+      color: #1a5f7a;
+    }
+    .logo-text p {
+      font-size: 11px;
+      color: #666;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #1a5f7a; }
+    
+    /* Banner */
+    .banner {
+      height: 450px;
+      background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .banner-content h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+    .banner-content p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    
+    /* 产品分类 */
+    .section { padding: 60px 0; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title h2 {
+      font-size: 32px;
+      color: #1a5f7a;
+      margin-bottom: 10px;
+    }
+    .section-title p { color: #666; }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 20px;
+      text-align: center;
+    }
+    .product-info h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .product-info p {
+      font-size: 13px;
+      color: #666;
+    }
+    
+    /* 关于我们 */
+    .about {
+      background: #f8f9fa;
+    }
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .about-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .about-features {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+    }
+    .feature {
+      text-align: center;
+    }
+    .feature-number {
+      font-size: 36px;
+      font-weight: bold;
+      color: #1a5f7a;
+    }
+    .feature-label {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    /* 联系方式 */
+    .contact {
+      background: #1a5f7a;
+      color: #fff;
+    }
+    .contact h2 { color: #fff; }
+    .contact-content {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      text-align: center;
+    }
+    .contact-item h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+    .contact-item p {
+      font-size: 15px;
+    }
+    
+    /* 页脚 */
+    footer {
+      background: #1a252f;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+    }
+    footer p {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+    
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .header-main { flex-direction: column; gap: 15px; }
+      nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+      .banner { height: 300px; }
+      .banner-content h2 { font-size: 28px; }
+      .about-features { flex-wrap: wrap; gap: 30px; }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- 顶部栏 -->
+  <div class="top-bar">
+    <div class="container">
+      <span>SUZHOU XINYUSENG IMPORT AND EXPORT CO., LTD.</span>
+      <span>📞 +86 512-88888888</span>
+    </div>
+  </div>
+  
+  <!-- 头部 -->
+  <header>
+    <div class="container">
+      <div class="header-main">
+        <div class="logo">
+          <div class="logo-text">
+            <h1>苏州鑫宇盛进出口有限公司</h1>
+            <p>SUZHOU XINYUSENG IMPORT AND EXPORT CO., LTD.</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Banner -->
+  <section class="banner" id="home">
+    <div class="banner-content">
+      <h2>Premium Textile Solutions</h2>
+      <p>专业高端面料供应商 · Leading Fabric Manufacturer</p>
+    </div>
+  </section>
+  
+  <!-- 产品分类 -->
+  <section class="section" id="products">
+    <div class="section-title">
+      <h2>Our Products</h2>
+      <p>高端品质面料 · Premium Quality Fabrics</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://placehold.co/400x300/1a5f7a/fff?text=Chun+Yafang" alt="春亚纺">
+        <div class="product-info">
+          <h3>春亚纺</h3>
+          <p>Chun Yafang / Polyester Pongee</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://placehold.co/400x300/159895/fff?text=Tafta" alt="涤塔夫">
+        <div class="product-info">
+          <h3>涤塔夫</h3>
+          <p>Tafta / Polyester Taft</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://placehold.co/400x300/57cc99/fff?text=Shu+Mei+Chou" alt="舒美绸">
+        <div class="product-info">
+          <h3>舒美绸</h3>
+          <p>Shu Mei Chou / Satin Fabric</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://placehold.co/400x300/80ced2/fff?text=Viscose+Lining" alt="人丝里布">
+        <div class="product-info">
+          <h3>人丝里布</h3>
+          <p>Viscose Lining / Rayon Lining</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://placehold.co/400x300/c7f5d9/333?text=Chiffon" alt="雪纺">
+        <div class="product-info">
+          <h3>雪纺</h3>
+          <p>Chiffon / Georgette</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://placehold.co/400x300/f0fff4/333?text=Cotton+Linen" alt="棉麻">
+        <div class="product-info">
+          <h3>棉麻</h3>
+          <p>Cotton Linen Fabric</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://placehold.co/400x300/e8f5e9/333?text=Denim" alt="牛仔布">
+        <div class="product-info">
+          <h3>牛仔布</h3>
+          <p>Denim / Jeans Fabric</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://placehold.co/400x300/f1f8e9/333?text=Jacquard" alt="提花面料">
+        <div class="product-info">
+          <h3>提花面料</h3>
+          <p>Jacquard Fabric</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 关于我们 -->
+  <section class="section about" id="about">
+    <div class="section-title">
+      <h2>About Us</h2>
+      <p>关于我们</p>
+    </div>
+    <div class="about-content">
+      <p>
+        苏州鑫宇盛进出口有限公司是一家专业从事高端面料进出口业务的企业。
+        我们致力于为客户提供优质的纺织面料产品，包括春亚纺、涤塔夫、舒美绸、人丝里布等系列。
+        公司拥有多年纺织行业经验，与多家知名面料厂家建立长期合作关系，
+        产品远销东南亚、欧洲、美洲等地区，深受客户好评。
+      </p>
+      <p>
+        Suzhou Xinyuseng Import and Export Co., Ltd. is a professional enterprise 
+        specializing in high-end fabric import and export business. We are committed 
+        to providing customers with quality textile products including Chun Yafang, Tafta, 
+        Shu Mei Chou, Viscose Lining and more.
+      </p>
+      <div class="about-features">
+        <div class="feature">
+          <div class="feature-number">10+</div>
+          <div class="feature-label">Years Experience</div>
+        </div>
+        <div class="feature">
+          <div class="feature-number">500+</div>
+          <div class="feature-label">Happy Clients</div>
+        </div>
+        <div class="feature">
+          <div class="feature-number">30+</div>
+          <div class="feature-label">Countries Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 联系方式 -->
+  <section class="section contact" id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p style="color: rgba(255,255,255,0.8);">联系我们</p>
+    </div>
+    <div class="contact-content">
+      <div class="contact-item">
+        <h3>📍 Address</h3>
+        <p>江苏省苏州市吴江区</p>
+      </div>
+      <div class="contact-item">
+        <h3>📞 Phone</h3>
+        <p>+86 512-88888888</p>
+      </div>
+      <div class="contact-item">
+        <h3>✉️ Email</h3>
+        <p>info@xinyuseng.com</p>
+      </div>
+      <div class="contact-item">
+        <h3>🌐 Website</h3>
+        <p>www.xinyuseng.com</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 页脚 -->
+  <footer>
+    <div class="container">
+      <p>© 2024 Suzhou Xinyuseng Import and Export Co., Ltd. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
