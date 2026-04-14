@@ -233,6 +233,41 @@
       color: #888;
     }
     
+    /* News Section */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .news-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 25px;
+      transition: all 0.3s;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .news-date {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .news-card h3 {
+      font-size: 18px;
+      color: var(--dark);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .news-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
     /* Features Section */
     .features { background: var(--dark); color: #fff; padding: 80px 0; }
     .features h2 { 
@@ -355,6 +390,61 @@
     .contact-item p {
       font-size: 15px;
       opacity: 0.85;
+    }
+    
+    /* Inquiry Form */
+    .inquiry-section { background: #fafbfc; padding: 80px 0; }
+    .inquiry-form {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15, 76, 117, 0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 15px 30px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .submit-btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
     }
     
     /* Footer */
@@ -488,6 +578,14 @@
       .contact-item h3 { font-size: 14px; margin-bottom: 10px; }
       .contact-item p { font-size: 13px; }
       
+      /* Inquiry Form - Mobile */
+      .inquiry-section { padding: 40px 0; }
+      .inquiry-form { padding: 25px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      
+      /* News - Mobile */
+      .news-grid { grid-template-columns: 1fr; gap: 20px; }
+      
       /* Footer */
       footer { padding: 20px 0; }
       footer p { font-size: 12px; }
@@ -526,6 +624,7 @@
         <ul>
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#products">Products</a></li>
+          <li><a href="#news">News</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -635,6 +734,33 @@
       </div>
     </div>
   </section>
+
+  <!-- News Section -->
+  <section class="section" id="news" style="background: #f8f9fa;">
+    <div class="container">
+      <div class="section-header">
+        <h2>News & <b>Updates</b></h2>
+        <p>Latest company news, industry insights, and trade shows</p>
+      </div>
+      <div class="news-grid" id="news-grid">
+        <div class="news-card">
+          <div class="news-date">Apr 2026</div>
+          <h3>Company Update Coming Soon</h3>
+          <p>Stay tuned for exciting news about our new product lines and expansion plans.</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">Mar 2026</div>
+          <h3>Attending Canton Fair 2026</h3>
+          <p>Visit us at Booth 12.3 during the Canton Fair in Guangzhou. Meet our team and explore our latest collections.</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">Feb 2026</div>
+          <h3>New Eco-Friendly Collection</h3>
+          <p>We're excited to announce our new sustainable fabric line, made from recycled materials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
   
   <!-- Features -->
   <section class="features" id="features">
@@ -719,6 +845,58 @@
           <p>www.xumsung.com<br>www.xinyuseng.com</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Inquiry Form -->
+  <section class="inquiry-section" id="inquiry">
+    <div class="container">
+      <div class="section-header">
+        <h2>Send <b>Inquiry</b></h2>
+        <p>Fill out the form below and we will get back to you within 24 hours</p>
+      </div>
+      <form class="inquiry-form" action="https://formspree.io/f/mojyqojr" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Enter company name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="product">Interested Product</label>
+          <select id="product" name="product">
+            <option value="">Select a product</option>
+            <option value="Chun Yafang">Chun Yafang (Polyester Pongee)</option>
+            <option value="Polyester Taft">Polyester Taft</option>
+            <option value="Shu Mei Chou">Shu Mei Chou (Satin)</option>
+            <option value="Viscose Lining">Viscose Lining</option>
+            <option value="Chiffon">Chiffon</option>
+            <option value="Cotton Linen">Cotton Linen</option>
+            <option value="Denim">Denim</option>
+            <option value="Jacquard">Jacquard</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell us about your requirements..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Inquiry</button>
+      </form>
     </div>
   </section>
   
