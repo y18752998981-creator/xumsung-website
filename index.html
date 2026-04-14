@@ -3,328 +3,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUZHOU XUMSUNG - Premium Textile Manufacturer</title>
-  <meta name="description" content="Premier textile manufacturer specializing in premium fabrics for global fashion brands since 2010.">
+  <title>SUZHOU XUMSUNG - Professional Textile Manufacturer & Exporter</title>
+  <meta name="description" content="Leading Chinese textile manufacturer - Chun Yafang, Polyester Taft, Viscose Lining, Chiffon, Denim. 15+ years, ISO certified. Factory direct prices.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --primary: #0a1628;
-      --accent: #c9a962;
-      --light: #f8f7f5;
-      --text: #2d2d2d;
-      --gray: #6b6b6b;
+      --primary: #1e3a5f;
+      --secondary: #2c5282;
+      --accent: #ed8936;
+      --light: #f7fafc;
+      --dark: #1a202c;
+      --gray: #718096;
     }
     body { 
-      font-family: 'Playfair Display', 'Times New Roman', Georgia, serif; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
       line-height: 1.6; 
-      color: var(--text);
+      color: var(--dark);
       background: #fff;
     }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
     
-    /* Minimal Header */
+    /* Header */
     header {
-      position: fixed;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      transition: all 0.3s;
+      z-index: 100;
+    }
+    .top-bar {
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px 40px;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .logo {
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-size: 22px;
+      font-weight: 700;
       color: var(--primary);
     }
     .logo span { color: var(--accent); }
     nav ul {
       display: flex;
       list-style: none;
-      gap: 40px;
+      gap: 30px;
     }
     nav a {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gray);
+      color: var(--dark);
       transition: color 0.3s;
     }
-    nav a:hover { color: var(--primary); }
+    nav a:hover { color: var(--accent); }
     
-    /* Hero - Clean & Bold */
+    /* Hero */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(ellipse at 70% 30%, rgba(201, 169, 98, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 30% 70%, rgba(201, 169, 98, 0.1) 0%, transparent 40%);
-    }
-    .hero-content {
-      text-align: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: #fff;
-      max-width: 800px;
-      padding: 0 40px;
-      position: relative;
-      z-index: 2;
-    }
-    .hero-label {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 25px;
+      padding: 80px 20px;
+      text-align: center;
     }
     .hero h1 {
-      font-size: clamp(40px, 6vw, 72px);
-      font-weight: 400;
-      line-height: 1.1;
-      margin-bottom: 25px;
-      letter-spacing: -0.5px;
-    }
-    .hero p {
-      font-size: 18px;
-      color: rgba(255,255,255,0.7);
-      max-width: 500px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-    }
-    .hero-cta {
-      display: inline-block;
-      padding: 18px 45px;
-      background: var(--accent);
-      color: var(--primary);
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: all 0.3s;
-    }
-    .hero-cta:hover {
-      background: #fff;
-      transform: translateY(-2px);
-    }
-    
-    /* Story Section */
-    .story {
-      padding: 120px 40px;
-      background: var(--light);
-    }
-    .story-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .story-label {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .story h2 {
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 400;
-      color: var(--primary);
-      margin-bottom: 30px;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      margin-bottom: 15px;
       line-height: 1.2;
     }
-    .story p {
-      font-size: 17px;
-      color: var(--gray);
-      line-height: 1.9;
-      margin-bottom: 20px;
+    .hero p {
+      font-size: 16px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 25px;
     }
-    .story-signature {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-style: italic;
-      color: var(--accent);
-      margin-top: 40px;
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    
-    /* Products - Focused */
-    .products { padding: 120px 40px; background: #fff; }
-    .products-header {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-    .products-label {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 15px;
-    }
-    .products h2 {
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 400;
-      color: var(--primary);
-    }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .product-card {
-      text-align: center;
-      transition: transform 0.4s;
-    }
-    .product-card:hover { transform: translateY(-10px); }
-    .product-image {
-      aspect-ratio: 4/5;
-      background: var(--light);
-      margin-bottom: 25px;
-      overflow: hidden;
-    }
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s;
-    }
-    .product-card:hover .product-image img { transform: scale(1.05); }
-    .product-card h3 {
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-    .product-card p {
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
       font-size: 14px;
-      color: var(--gray);
-      font-family: 'Helvetica Neue', sans-serif;
-      letter-spacing: 0.5px;
+      font-weight: 600;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #dd6b20;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
     }
     
-    /* Stats - Minimal */
+    /* Stats */
     .stats {
-      padding: 80px 40px;
-      background: var(--primary);
-      color: #fff;
+      background: var(--light);
+      padding: 40px 20px;
     }
     .stats-grid {
       display: flex;
       justify-content: center;
-      gap: 100px;
-      max-width: 900px;
+      gap: 60px;
+      max-width: 1000px;
       margin: 0 auto;
+      flex-wrap: wrap;
     }
     .stat-item { text-align: center; }
     .stat-item h3 {
-      font-size: 48px;
-      font-weight: 300;
-      color: var(--accent);
-      margin-bottom: 5px;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
     }
     .stat-item p {
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 12px;
-      letter-spacing: 2px;
+      font-size: 13px;
+      color: var(--gray);
       text-transform: uppercase;
-      opacity: 0.7;
+      letter-spacing: 1px;
+    }
+    
+    /* Products */
+    .products { padding: 60px 20px; background: #fff; }
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .section-header p { color: var(--gray); }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+    }
+    .product-info h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+    .product-info p {
+      font-size: 12px;
+      color: var(--gray);
+    }
+    
+    /* Categories */
+    .categories {
+      padding: 60px 20px;
+      background: var(--light);
+    }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .category-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    .category-icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    .category-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .category-card p {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    
+    /* Why Choose Us */
+    .why-us {
+      padding: 60px 20px;
+      background: #fff;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .why-item {
+      text-align: center;
+    }
+    .why-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 24px;
+      color: #fff;
+    }
+    .why-item h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .why-item p {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    
+    /* Certifications */
+    .certifications {
+      background: var(--primary);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .certifications h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+    .cert-tags {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cert-tag {
+      background: rgba(255,255,255,0.15);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 500;
     }
     
     /* Contact */
     .contact {
-      padding: 120px 40px;
+      padding: 60px 20px;
       background: var(--light);
     }
-    .contact-inner {
-      max-width: 600px;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
       margin: 0 auto;
       text-align: center;
     }
-    .contact h2 {
-      font-size: 36px;
-      font-weight: 400;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .contact p {
+    .contact-item h3 {
       font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .contact-item p {
+      font-size: 14px;
       color: var(--gray);
-      margin-bottom: 40px;
     }
-    .contact-email {
-      font-size: 20px;
-      color: var(--primary);
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 5px;
+    
+    /* Inquiry Form */
+    .inquiry {
+      padding: 60px 20px;
+      background: #fff;
     }
-    .contact-email:hover { color: var(--accent); }
+    .inquiry-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e0;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background: var(--secondary);
+    }
     
     /* Footer */
     footer {
-      padding: 40px;
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 30px 20px;
       text-align: center;
-      background: var(--primary);
-      color: rgba(255,255,255,0.5);
-      font-family: 'Helvetica Neue', sans-serif;
-      font-size: 12px;
+      font-size: 13px;
     }
     
     /* Mobile */
     @media (max-width: 768px) {
-      .header-inner { padding: 15px 20px; }
-      .logo { font-size: 18px; }
-      nav { display: none; }
-      
-      .hero { min-height: 90vh; }
-      .hero-content { padding: 0 25px; }
-      .hero h1 { font-size: 36px; }
-      .hero p { font-size: 15px; }
-      
-      .story, .products, .contact { padding: 80px 25px; }
-      .products-grid { grid-template-columns: 1fr; gap: 60px; }
-      .stats-grid { flex-direction: column; gap: 40px; }
+      .top-bar { display: none; }
+      .header-inner { flex-direction: column; gap: 15px; }
+      nav ul { gap: 20px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+  
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>Professional Textile Manufacturer Since 2010</span>
+      <div>
+        <a href="mailto:info@xumsung.com">info@xumsung.com</a>
+        <span style="margin: 0 10px;">|</span>
+        <a href="tel:+8651288888888">+86 512-88888888</a>
+      </div>
+    </div>
+  </div>
   
   <!-- Header -->
   <header>
     <div class="header-inner">
-      <div class="logo">XU<span>MSUNG</span></div>
+      <div class="logo">XUMSUNG <span>TEXTILE</span></div>
       <nav>
         <ul>
-          <li><a href="#story">Story</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -332,54 +433,13 @@
   </header>
   
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-label">Premium Textile Manufacturer</div>
-      <h1>Creating Fabric<br>That Matters</h1>
-      <p>Since 2010, we've been crafting exceptional textiles for discerning fashion brands worldwide. Every thread tells a story of quality.</p>
-      <a href="#products" class="hero-cta">Explore Our Work</a>
-    </div>
-  </section>
-  
-  <!-- Story -->
-  <section class="story" id="story">
-    <div class="story-inner">
-      <div class="story-label">Our Story</div>
-      <h2>Excellence in Every Thread</h2>
-      <p>Founded in Suzhou, the birthplace of Chinese silk, Xumsung has grown from a small family workshop to a trusted partner for global fashion brands. We believe that exceptional fabric is the foundation of extraordinary design.</p>
-      <p>Our commitment to quality extends beyond production—we source the finest fibers, perfect every weave, and ensure each meter meets our exacting standards. This dedication has earned us the trust of clients across 30+ countries.</p>
-      <div class="story-signature">— The Xumsung Team</div>
-    </div>
-  </section>
-  
-  <!-- Products - 3 Core Focus -->
-  <section class="products" id="products">
-    <div class="products-header">
-      <div class="products-label">What We Do</div>
-      <h2>Our Expertise</h2>
-    </div>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&h=750&fit=crop" alt="Premium Fabrics">
-        </div>
-        <h3>Premium Woven</h3>
-        <p>Polyester & Blended Fabrics</p>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&h=750&fit=crop" alt="Silk & Satin">
-        </div>
-        <h3>Silk & Satin</h3>
-        <p>Luxury Finish Collections</p>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=600&h=750&fit=crop" alt="Functional Textiles">
-        </div>
-        <h3>Functional</h3>
-        <p>Performance & Technical Fabrics</p>
-      </div>
+  <section class="hero" id="home">
+    <h1>Professional Textile Manufacturer & Exporter</h1>
+    <p>15+ years experience | ISO 9001 Certified | Factory Direct Prices</p>
+    <p>Specializing in polyester fabrics, viscose linings, and functional textiles for global fashion brands</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn btn-primary">View Products</a>
+      <a href="#contact" class="btn btn-outline">Get Quote</a>
     </div>
   </section>
   
@@ -396,18 +456,216 @@
       </div>
       <div class="stat-item">
         <h3>30+</h3>
-        <p>Countries Served</p>
+        <p>Countries</p>
       </div>
+      <div class="stat-item">
+        <h3>ISO</h3>
+        <p>Certified</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Products - 8 Items -->
+  <section class="products" id="products">
+    <div class="section-header">
+      <h2>Our Products</h2>
+      <p>High-quality fabrics for fashion, sportswear, and functional applications</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=300&fit=crop" alt="Chun Yafang">
+        <div class="product-info">
+          <h3>Chun Yafang</h3>
+          <p>Polyester Pongee</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=300&fit=crop" alt="Polyester Taft">
+        <div class="product-info">
+          <h3>Polyester Taft</h3>
+          <p>Taffeta Fabric</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=400&h=300&fit=crop" alt="Shu Mei Chou">
+        <div class="product-info">
+          <h3>Shu Mei Chou</h3>
+          <p>Satin Fabric</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=400&h=300&fit=crop" alt="Viscose Lining">
+        <div class="product-info">
+          <h3>Viscose Lining</h3>
+          <p>Rayon Lining</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=300&fit=crop" alt="Chiffon">
+        <div class="product-info">
+          <h3>Chiffon</h3>
+          <p>Georgette Fabric</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=300&fit=crop" alt="Denim">
+        <div class="product-info">
+          <h3>Denim</h3>
+          <p>Jeans Fabric</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=300&fit=crop" alt="Cotton Linen">
+        <div class="product-info">
+          <h3>Cotton Linen</h3>
+          <p>Natural Blend</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e50?w=400&h=300&fit=crop" alt="Jacquard">
+        <div class="product-info">
+          <h3>Jacquard</h3>
+          <p>Woven Pattern</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Categories -->
+  <section class="categories">
+    <div class="section-header">
+      <h2>Product Categories</h2>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card">
+        <div class="category-icon">🧵</div>
+        <h3>Polyester Fabrics</h3>
+        <p>Pongee, Taft, Chiffon</p>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🏭</div>
+        <h3>Viscose / Rayon</h3>
+        <p>Linings, Satins</p>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">👔</div>
+        <h3>Cotton Blends</h3>
+        <p>Denim, Linen Mix</p>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🎨</div>
+        <h3>Functional</h3>
+        <p>Waterproof, UV Protection</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why Choose Us -->
+  <section class="why-us">
+    <div class="section-header">
+      <h2>Why Choose Us</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">🏭</div>
+        <h3>Factory Direct</h3>
+        <p>Competitive pricing, no middleman</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">✓</div>
+        <h3>ISO Certified</h3>
+        <p>Quality management system</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📦</div>
+        <h3>Global Shipping</h3>
+        <p>30+ countries served</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">💬</div>
+        <h3>24/7 Support</h3>
+        <p>Dedicated account managers</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Certifications -->
+  <section class="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-tags">
+      <span class="cert-tag">ISO 9001</span>
+      <span class="cert-tag">OEKO-TEX</span>
+      <span class="cert-tag">GRS</span>
+      <span class="cert-tag">SGS</span>
     </div>
   </section>
   
   <!-- Contact -->
   <section class="contact" id="contact">
-    <div class="contact-inner">
-      <h2>Let's Create Together</h2>
-      <p>Ready to bring your vision to life? We'd love to hear from you.</p>
-      <a href="mailto:info@xumsung.com" class="contact-email">info@xumsung.com</a>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <h3>Email</h3>
+        <p>info@xumsung.com</p>
+      </div>
+      <div class="contact-item">
+        <h3>Phone</h3>
+        <p>+86 512-88888888</p>
+      </div>
+      <div class="contact-item">
+        <h3>Address</h3>
+        <p>Suzhou, Jiangsu, China</p>
+      </div>
     </div>
+  </section>
+  
+  <!-- Inquiry Form -->
+  <section class="inquiry">
+    <div class="section-header">
+      <h2>Request a Quote</h2>
+      <p>Fill in your requirements and we'll get back to you within 24 hours</p>
+    </div>
+    <form class="inquiry-form" action="https://formspree.io/f/xpwzgvrz" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name *</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+          <label>Company</label>
+          <input type="text" name="company">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" name="phone">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Interested Products</label>
+        <select name="product">
+          <option value="">Select a product</option>
+          <option value="chun-yafang">Chun Yafang</option>
+          <option value="polyester-taft">Polyester Taft</option>
+          <option value="shu-mei-chou">Shu Mei Chou</option>
+          <option value="viscose-lining">Viscose Lining</option>
+          <option value="chiffon">Chiffon</option>
+          <option value="cotton-linen">Cotton Linen</option>
+          <option value="denim">Denim</option>
+          <option value="jacquard">Jacquard</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message / Requirements</label>
+        <textarea name="message" rows="4" placeholder="Please specify quantity, specifications, etc."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Inquiry</button>
+    </form>
   </section>
   
   <!-- Footer -->
@@ -423,16 +681,6 @@
         const target = document.querySelector(this.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
-    });
-    
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      if (window.scrollY > 50) {
-        header.style.padding = '15px 40px';
-      } else {
-        header.style.padding = '20px 40px';
-      }
     });
   </script>
 </body>
