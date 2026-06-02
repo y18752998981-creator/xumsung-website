@@ -1,692 +1,925 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUZHOU XUMSUNG - Professional Textile Manufacturer & Exporter</title>
-  <meta name="description" content="Leading Chinese textile manufacturer - Chun Yafang, Polyester Taft, Viscose Lining, Chiffon, Denim. 15+ years, ISO certified. Factory direct prices.">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary: #1e3a5f;
-      --secondary: #2c5282;
-      --accent: #ed8936;
-      --light: #f7fafc;
-      --dark: #1a202c;
-      --gray: #718096;
-    }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-      line-height: 1.6; 
-      color: var(--dark);
-      background: #fff;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-    
-    /* Header */
-    header {
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .top-bar {
-      background: var(--primary);
-      color: #fff;
-      padding: 8px 0;
-      font-size: 13px;
-    }
-    .top-bar .container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    .logo span { color: var(--accent); }
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-    nav a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--dark);
-      transition: color 0.3s;
-    }
-    nav a:hover { color: var(--accent); }
-    
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: #fff;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 700;
-      margin-bottom: 15px;
-      line-height: 1.2;
-    }
-    .hero p {
-      font-size: 16px;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto 25px;
-    }
-    .hero-btns {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-    .btn-primary:hover {
-      background: #dd6b20;
-      transform: translateY(-2px);
-    }
-    .btn-outline {
-      background: transparent;
-      color: #fff;
-      border: 2px solid rgba(255,255,255,0.5);
-    }
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: #fff;
-    }
-    
-    /* Stats */
-    .stats {
-      background: var(--light);
-      padding: 40px 20px;
-    }
-    .stats-grid {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      max-width: 1000px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-    .stat-item { text-align: center; }
-    .stat-item h3 {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    .stat-item p {
-      font-size: 13px;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    /* Products */
-    .products { padding: 60px 20px; background: #fff; }
-    .section-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .section-header h2 {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 10px;
-    }
-    .section-header p { color: var(--gray); }
-    
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .product-card {
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: all 0.3s;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    .product-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .product-info {
-      padding: 15px;
-    }
-    .product-info h3 {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 5px;
-    }
-    .product-info p {
-      font-size: 12px;
-      color: var(--gray);
-    }
-    
-    /* Categories */
-    .categories {
-      padding: 60px 20px;
-      background: var(--light);
-    }
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .category-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.3s;
-    }
-    .category-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-    .category-icon {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
-    .category-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-    .category-card p {
-      font-size: 13px;
-      color: var(--gray);
-    }
-    
-    /* Why Choose Us */
-    .why-us {
-      padding: 60px 20px;
-      background: #fff;
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .why-item {
-      text-align: center;
-    }
-    .why-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 15px;
-      font-size: 24px;
-      color: #fff;
-    }
-    .why-item h3 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .why-item p {
-      font-size: 13px;
-      color: var(--gray);
-    }
-    
-    /* Certifications */
-    .certifications {
-      background: var(--primary);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .certifications h2 {
-      font-size: 22px;
-      margin-bottom: 25px;
-    }
-    .cert-tags {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .cert-tag {
-      background: rgba(255,255,255,0.15);
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    
-    /* Contact */
-    .contact {
-      padding: 60px 20px;
-      background: var(--light);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .contact-item h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: var(--dark);
-    }
-    .contact-item p {
-      font-size: 14px;
-      color: var(--gray);
-    }
-    
-    /* Inquiry Form */
-    .inquiry {
-      padding: 60px 20px;
-      background: #fff;
-    }
-    .inquiry-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid #cbd5e0;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .submit-btn:hover {
-      background: var(--secondary);
-    }
-    
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,0.7);
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 13px;
-    }
-    
-    /* Mobile */
-    @media (max-width: 768px) {
-      .top-bar { display: none; }
-      .header-inner { flex-direction: column; gap: 15px; }
-      nav ul { gap: 20px; }
-      .products-grid { grid-template-columns: repeat(2, 1fr); }
-      .categories-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-      .form-row { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══════════════════════════════════════════
+  SEO · META
+  ═══════════════════════════════════════════ -->
+<title>Xumsung — Bespoke Synthetic Fiber Sourcing &amp; QC Agent | Suzhou</title>
+<meta name="description" content="Xumsung is a Suzhou-based synthetic fiber specialist. We source polyester, nylon, and spandex from verified 1688 factories with atelier-grade QC, burn-test verification, and factory-direct pricing. WhatsApp +86 13862506631.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://y18752998981-creator.github.io/xumsung-website/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://y18752998981-creator.github.io/xumsung-website/">
+<meta property="og:title" content="Xumsung — Bespoke Synthetic Fiber Sourcing &amp; QC Agent">
+<meta property="og:description" content="Where chemistry meets craftsmanship. Polyester, nylon, and spandex sourcing from verified 1688 mills, with atelier-grade inspection and burn-test verification. Based in Suzhou, China.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1617952454641-4c92dd0e97e0?w=1200&h=630&fit=crop&auto=format">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Xumsung",
+  "url": "https://y18752998981-creator.github.io/xumsung-website/",
+  "description": "Suzhou-based synthetic fiber sourcing and QC agent. Polyester, nylon, and spandex from verified 1688 factories.",
+  "email": "info@xumsung.com",
+  "telephone": "+8613862506631",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Suzhou",
+    "addressRegion": "Jiangsu",
+    "addressCountry": "CN"
+  },
+  "areaServed": {
+    "@type": "Continent",
+    "name": "Worldwide"
+  }
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   CSS CUSTOM PROPERTIES
+   ═══════════════════════════════════════════ */
+:root {
+  --ivory: #FAF9F6;
+  --paper: #F5F4F0;
+  --paper-warm: #F8F6F1;
+  --gold: #9B8748;
+  --gold-light: #B8A87A;
+  --gold-pale: #E8E2D0;
+  --gold-dim: #6B5E3A;
+  --charcoal: #1A1A1A;
+  --slate: #3D3D3D;
+  --slate-muted: #787670;
+  --border-subtle: rgba(0,0,0,.06);
+  --border-gold: rgba(155,135,72,.15);
+  --transition: 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--ivory);
+  color: var(--slate);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+::selection { background: rgba(155,135,72,.15); color: var(--charcoal); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--gold-pale); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
+
+/* Typography */
+h1, h2, h3, .serif {
+  font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); line-height: 1.1; }
+h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; }
+h3 { font-size: 1.2rem; line-height: 1.35; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+/* ═══════════════════════════════════════════
+   HEADER — Floating Glass Capsule
+   ═══════════════════════════════════════════ */
+.site-header {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100;
+  width: min(1120px, calc(100% - 48px));
+  padding: 14px 36px;
+  background: rgba(250,249,246,.72);
+  backdrop-filter: blur(28px) saturate(1.4);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4);
+  border: 1px solid var(--border-gold);
+  border-radius: 100px;
+  box-shadow: 0 2px 32px rgba(0,0,0,.03);
+  transition: all var(--transition);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.site-header.scrolled {
+  background: rgba(250,249,246,.88);
+  border-color: rgba(155,135,72,.22);
+  box-shadow: 0 4px 40px rgba(0,0,0,.05);
+}
+.logo {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--charcoal);
+  letter-spacing: 0.04em;
+}
+.logo em { font-style: italic; color: var(--gold); }
+.nav-list { display: flex; list-style: none; gap: 36px; align-items: center; }
+.nav-list a {
+  font-size: .78rem; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--slate-muted);
+  position: relative; transition: color var(--transition);
+}
+.nav-list a::after {
+  content: ''; position: absolute; bottom: -6px; left: 0;
+  width: 0; height: 1px; background: var(--gold);
+  transition: width var(--transition);
+}
+.nav-list a:hover { color: var(--charcoal); }
+.nav-list a:hover::after { width: 100%; }
+.cta-dot {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 22px;
+  border: 1px solid var(--border-gold);
+  border-radius: 100px;
+  color: var(--gold) !important;
+  font-size: .72rem !important;
+  transition: all var(--transition) !important;
+}
+.cta-dot::after { display: none !important; }
+.cta-dot::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); animation: pulse 2.5s ease infinite;
+}
+.cta-dot:hover { background: rgba(155,135,72,.06); border-color: var(--gold); }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+/* Mobile nav */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--gold); border-radius: 1px; transition: all var(--transition); }
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  padding: 200px 0 100px;
+  text-align: center;
+  position: relative; isolation: isolate; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(155,135,72,.04), transparent),
+    radial-gradient(ellipse 30% 30% at 80% 70%, rgba(155,135,72,.03), transparent),
+    radial-gradient(ellipse 30% 30% at 20% 60%, rgba(155,135,72,.02), transparent);
+}
+.hero-grid {
+  position: absolute; inset: 0; z-index: -2; opacity: .035;
+  background-image:
+    linear-gradient(rgba(155,135,72,.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155,135,72,.25) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 35%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 35%, black, transparent);
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 24px;
+  background: rgba(155,135,72,.05);
+  border: 1px solid var(--border-gold);
+  border-radius: 100px;
+  font-size: .72rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--gold-dim);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+.hero h1 { margin-bottom: 24px; }
+.hero .italic { font-style: italic; color: var(--gold); }
+.hero-lead {
+  max-width: 600px; margin: 0 auto 48px;
+  font-size: 1.05rem; color: var(--slate-muted); line-height: 1.85;
+  font-weight: 400;
+}
+
+/* Buttons */
+.btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px; border-radius: 100px;
+  font-size: .82rem; font-weight: 500; letter-spacing: .08em;
+  text-transform: uppercase; cursor: pointer;
+  transition: all var(--transition); border: none;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--gold); color: #fff;
+  box-shadow: 0 2px 20px rgba(155,135,72,.18);
+}
+.btn-primary:hover { background: var(--gold-dim); transform: translateY(-2px); box-shadow: 0 6px 30px rgba(155,135,72,.25); }
+.btn-ghost {
+  background: transparent; color: var(--gold-dim);
+  border: 1px solid var(--border-gold);
+}
+.btn-ghost:hover { background: rgba(155,135,72,.05); border-color: var(--gold); }
+.btn-arrow { transition: transform var(--transition); }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════
+   TRUST STRIP
+   ═══════════════════════════════════════════ */
+.trust-strip {
+  display: flex; justify-content: center; gap: 80px; flex-wrap: wrap;
+  padding: 48px 0; margin-top: 80px;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.trust-item { text-align: center; }
+.trust-num {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2.4rem; color: var(--gold);
+}
+.trust-label { font-size: .78rem; color: var(--slate-muted); margin-top: 4px; letter-spacing: .04em; }
+
+/* ═══════════════════════════════════════════
+   SECTION GENERICS
+   ═══════════════════════════════════════════ */
+.section { padding: 110px 0; position: relative; }
+.section-alt { background: var(--paper); }
+.section-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .7rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold); font-weight: 500; margin-bottom: 20px;
+}
+.section-label::before {
+  content: ''; width: 20px; height: 1px; background: var(--gold);
+}
+.section-intro { max-width: 520px; color: var(--slate-muted); font-size: .98rem; margin-bottom: 56px; line-height: 1.8; }
+
+/* ═══════════════════════════════════════════
+   EXPERTISE CARDS
+   ═══════════════════════════════════════════ */
+.expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.expertise-card {
+  padding: 48px 36px;
+  background: rgba(255,255,255,.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: all var(--transition);
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.expertise-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(155,135,72,.03), transparent 70%);
+  opacity: 0; transition: opacity var(--transition);
+}
+.expertise-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 16px 48px rgba(0,0,0,.04);
+}
+.expertise-card:hover::before { opacity: 1; }
+.expertise-num {
+  position: absolute; top: 20px; right: 24px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 3.5rem; color: rgba(155,135,72,.07); line-height: 1;
+}
+.expertise-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(155,135,72,.07);
+  border: 1px solid var(--border-gold);
+  font-size: 1.4rem; margin-bottom: 22px;
+}
+.expertise-card h3 { margin-bottom: 10px; }
+.expertise-card p { font-size: .85rem; color: var(--slate-muted); line-height: 1.7; }
+
+/* ═══════════════════════════════════════════
+   PRODUCT CATEGORIES
+   ═══════════════════════════════════════════ */
+.category-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.category-card {
+  padding: 40px 36px;
+  background: rgba(255,255,255,.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: all var(--transition);
+  display: flex; gap: 20px; align-items: flex-start;
+}
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-gold);
+  box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 12px 36px rgba(0,0,0,.04);
+}
+.category-badge {
+  flex-shrink: 0; width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(155,135,72,.06); border-radius: 10px;
+  border: 1px solid var(--border-gold);
+  font-size: 1.3rem;
+}
+.category-card h3 { font-size: 1.05rem; margin-bottom: 6px; color: var(--charcoal); }
+.category-card p { font-size: .82rem; color: var(--slate-muted); line-height: 1.65; }
+.category-tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.category-tag {
+  font-size: .68rem; padding: 4px 12px;
+  background: rgba(155,135,72,.05); border-radius: 100px;
+  color: var(--gold-dim); letter-spacing: .04em;
+}
+
+/* ═══════════════════════════════════════════
+   WHY XUMSUNG
+   ═══════════════════════════════════════════ */
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.why-card {
+  padding: 36px 32px;
+  background: rgba(255,255,255,.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: all var(--transition);
+  display: flex; gap: 18px; align-items: flex-start;
+}
+.why-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-gold);
+  box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 10px 32px rgba(0,0,0,.03);
+}
+.why-marker {
+  flex-shrink: 0; width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  background: rgba(155,135,72,.06);
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+}
+.why-card h3 { font-size: 1rem; margin-bottom: 4px; color: var(--charcoal); }
+.why-card p { font-size: .8rem; color: var(--slate-muted); line-height: 1.65; }
+
+/* ═══════════════════════════════════════════
+   CERTIFICATIONS
+   ═══════════════════════════════════════════ */
+.cert-row { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; }
+.cert-item {
+  text-align: center;
+  padding: 28px 32px;
+  background: rgba(255,255,255,.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  min-width: 140px;
+  transition: all var(--transition);
+}
+.cert-item:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-2px);
+}
+.cert-name {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.4rem; color: var(--charcoal);
+}
+.cert-desc { font-size: .7rem; color: var(--slate-muted); margin-top: 4px; letter-spacing: .04em; }
+
+/* ═══════════════════════════════════════════
+   CONTACT / CTA
+   ═══════════════════════════════════════════ */
+.cta-section { text-align: center; }
+.cta-card {
+  display: inline-block;
+  padding: 64px;
+  background: rgba(255,255,255,.5);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  max-width: 600px;
+  transition: all var(--transition);
+}
+.cta-card:hover { border-color: var(--border-gold); box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 20px 56px rgba(0,0,0,.04); }
+.cta-card h2 { margin-bottom: 16px; }
+.cta-card p { color: var(--slate-muted); margin-bottom: 36px; font-size: .95rem; }
+.cta-links { display: flex; gap: 40px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
+.cta-links a {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--slate-muted); font-size: .85rem;
+  transition: color var(--transition); text-decoration: none;
+}
+.cta-links a:hover { color: var(--gold); }
+.cta-sep { color: var(--border-subtle); }
+
+/* ═══════════════════════════════════════════
+   INQUIRY FORM
+   ═══════════════════════════════════════════ */
+.inquiry-form {
+  max-width: 580px; margin: 0 auto;
+  padding: 40px;
+  background: rgba(255,255,255,.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 18px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label {
+  display: block; font-size: .72rem; font-weight: 500;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--slate-muted); margin-bottom: 6px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%; padding: 12px 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: rgba(250,249,246,.6);
+  font-family: 'Inter', sans-serif;
+  font-size: .88rem; color: var(--charcoal);
+  transition: all var(--transition);
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none; border-color: var(--gold);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(155,135,72,.08);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.btn-submit {
+  width: 100%; padding: 16px;
+  background: var(--gold); color: #fff;
+  border: none; border-radius: 100px;
+  font-size: .82rem; font-weight: 500; letter-spacing: .08em;
+  text-transform: uppercase; cursor: pointer;
+  transition: all var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+.btn-submit:hover { background: var(--gold-dim); transform: translateY(-2px); box-shadow: 0 6px 28px rgba(155,135,72,.2); }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.site-footer {
+  padding: 36px 0;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center; font-size: .78rem; color: var(--slate-muted);
+}
+.site-footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.site-footer em { font-style: italic; color: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   BACK TO TOP
+   ═══════════════════════════════════════════ */
+.back-top {
+  position: fixed; bottom: 28px; right: 28px; z-index: 99;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(250,249,246,.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  color: var(--gold); font-size: 1.2rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+  transition: all var(--transition);
+}
+.back-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-top:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+/* Scroll Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .site-header { top: 0; left: 0; transform: none; width: 100%; border-radius: 0; border-left: none; border-right: none; border-top: none; padding: 12px 20px; }
+  .nav-list { display: none; position: fixed; top: 0; right: 0; width: 280px; height: 100vh;
+    background: rgba(250,249,246,.94); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px);
+    flex-direction: column; padding: 100px 40px 40px; gap: 28px;
+    border-left: 1px solid var(--border-subtle); z-index: 99; }
+  .nav-list.open { display: flex; }
+  .nav-toggle { display: flex; z-index: 100; }
+  .hero { padding: 140px 0 70px; }
+  .trust-strip { gap: 40px; }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .cta-card { padding: 36px 24px; max-width: 100%; }
+  .btn-row { flex-direction: column; align-items: center; }
+}
+</style>
 </head>
 <body>
-  
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <span>Professional Textile Manufacturer Since 2010</span>
-      <div>
-        <a href="mailto:info@xumsung.com">info@xumsung.com</a>
-        <span style="margin: 0 10px;">|</span>
-        <a href="tel:+8651288888888">+86 512-88888888</a>
+
+<!-- ═══════════════════════════════════════
+  HEADER
+  ═══════════════════════════════════════ -->
+<header class="site-header" id="header">
+  <div class="logo">Xumsung <em>Textile</em></div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav>
+    <ul class="nav-list" id="navList">
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#categories">Fabrics</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact" class="cta-dot">Inquire</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════════
+  HERO
+  ═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-badge reveal">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      Suzhou · Since 2010
+    </div>
+    <h1 class="reveal">
+      Where chemistry<br>meets <span class="italic">craftsmanship</span>
+    </h1>
+    <p class="hero-lead reveal">
+      We don't trade "general textiles." We are a synthetic fiber specialist —
+      polyester, nylon, and spandex sourced from verified 1688 factories,
+      inspected to the denier, and shipped worldwide.
+    </p>
+    <div class="btn-row reveal">
+      <a href="#contact" class="btn btn-primary">
+        Start Sourcing <span class="btn-arrow">→</span>
+      </a>
+      <a href="#expertise" class="btn btn-ghost">
+        How We Work <span class="btn-arrow">↓</span>
+      </a>
+    </div>
+
+    <div class="trust-strip reveal">
+      <div class="trust-item">
+        <div class="trust-num">15+</div>
+        <div class="trust-label">Years in Fiber</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">100%</div>
+        <div class="trust-label">QC Inspection</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">48h</div>
+        <div class="trust-label">Avg Turnaround</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">ISO</div>
+        <div class="trust-label">Certified</div>
       </div>
     </div>
   </div>
-  
-  <!-- Header -->
-  <header>
-    <div class="header-inner">
-      <div class="logo">XUMSUNG <span>TEXTILE</span></div>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <h1>Professional Textile Manufacturer & Exporter</h1>
-    <p>15+ years experience | ISO 9001 Certified | Factory Direct Prices</p>
-    <p>Specializing in polyester fabrics, viscose linings, and functional textiles for global fashion brands</p>
-    <div class="hero-btns">
-      <a href="#products" class="btn btn-primary">View Products</a>
-      <a href="#contact" class="btn btn-outline">Get Quote</a>
-    </div>
-  </section>
-  
-  <!-- Stats -->
-  <section class="stats">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <h3>15+</h3>
-        <p>Years Experience</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+  EXPERTISE — HOW WE WORK
+  ═══════════════════════════════════════ -->
+<section class="section" id="expertise">
+  <div class="container">
+    <div class="section-label reveal">The Process</div>
+    <h2 class="reveal">Three steps. Zero guesswork.</h2>
+    <p class="section-intro reveal">From 1688 link to your doorstep — transparent, verified, and handled by people who understand fiber down to the molecule.</p>
+
+    <div class="expertise-grid">
+      <div class="expertise-card reveal">
+        <div class="expertise-num">01</div>
+        <div class="expertise-icon">🔗</div>
+        <h3>Send Us Links</h3>
+        <p>Share 1688.com product URLs. We verify supplier claims against real fiber specs — denier, filament count, elastane content — before you pay a cent.</p>
       </div>
-      <div class="stat-item">
-        <h3>500+</h3>
-        <p>Global Clients</p>
+      <div class="expertise-card reveal">
+        <div class="expertise-num">02</div>
+        <div class="expertise-icon">🔬</div>
+        <h3>We Inspect Everything</h3>
+        <p>Orders arrive at our Suzhou facility. We photograph weave consistency, color accuracy, GSM weight, and perform burn-test fiber ID. You approve before shipping.</p>
       </div>
-      <div class="stat-item">
-        <h3>30+</h3>
-        <p>Countries</p>
-      </div>
-      <div class="stat-item">
-        <h3>ISO</h3>
-        <p>Certified</p>
+      <div class="expertise-card reveal">
+        <div class="expertise-num">03</div>
+        <div class="expertise-icon">📦</div>
+        <h3>Packed &amp; Shipped</h3>
+        <p>Repacked to international standards, shipped via your carrier of choice. Tracking within 24 hours. DDP terms available.</p>
       </div>
     </div>
-  </section>
-  
-  <!-- Products - 8 Items -->
-  <section class="products" id="products">
-    <div class="section-header">
-      <h2>Our Products</h2>
-      <p>High-quality fabrics for fashion, sportswear, and functional applications</p>
-    </div>
-    <div class="products-grid">
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=300&fit=crop" alt="Chun Yafang">
-        <div class="product-info">
-          <h3>Chun Yafang</h3>
-          <p>Polyester Pongee</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  PRODUCT CATEGORIES
+  ═══════════════════════════════════════ -->
+<section class="section section-alt" id="categories">
+  <div class="container">
+    <div class="section-label reveal">Fabric Capabilities</div>
+    <h2 class="reveal">Synthetic fiber is all we do.</h2>
+    <p class="section-intro reveal">We're not a generic sourcing agent. We specialize in synthetic fibers — the materials that power performance fashion, sportswear, and functional textiles.</p>
+
+    <div class="category-grid">
+      <div class="category-card reveal">
+        <div class="category-badge">🧵</div>
+        <div>
+          <h3>Polyester Fabrics</h3>
+          <p>Chun Yafang (Pongee), Polyester Taffeta, Chiffon, Georgette, and polyester blends — from 50D to 300D.</p>
+          <div class="category-tags">
+            <span class="category-tag">Pongee</span>
+            <span class="category-tag">Taffeta</span>
+            <span class="category-tag">Chiffon</span>
+            <span class="category-tag">Georgette</span>
+          </div>
         </div>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=300&fit=crop" alt="Polyester Taft">
-        <div class="product-info">
-          <h3>Polyester Taft</h3>
-          <p>Taffeta Fabric</p>
+      <div class="category-card reveal">
+        <div class="category-badge">✨</div>
+        <div>
+          <h3>Nylon &amp; Spandex</h3>
+          <p>Nylon 6/66, spandex blends for activewear, swimwear, and intimates. Stretch recovery verified on every batch.</p>
+          <div class="category-tags">
+            <span class="category-tag">Nylon 6</span>
+            <span class="category-tag">Nylon 66</span>
+            <span class="category-tag">Spandex</span>
+            <span class="category-tag">Activewear</span>
+          </div>
         </div>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=400&h=300&fit=crop" alt="Shu Mei Chou">
-        <div class="product-info">
-          <h3>Shu Mei Chou</h3>
-          <p>Satin Fabric</p>
+      <div class="category-card reveal">
+        <div class="category-badge">🪡</div>
+        <div>
+          <h3>Viscose &amp; Rayon Linings</h3>
+          <p>Shu Mei Chou (Satin), viscose twill linings for suits and dresses. Smooth hand-feel, anti-static finish available.</p>
+          <div class="category-tags">
+            <span class="category-tag">Satin</span>
+            <span class="category-tag">Twill</span>
+            <span class="category-tag">Lining</span>
+            <span class="category-tag">Viscose</span>
+          </div>
         </div>
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=400&h=300&fit=crop" alt="Viscose Lining">
-        <div class="product-info">
-          <h3>Viscose Lining</h3>
-          <p>Rayon Lining</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=300&fit=crop" alt="Chiffon">
-        <div class="product-info">
-          <h3>Chiffon</h3>
-          <p>Georgette Fabric</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=300&fit=crop" alt="Denim">
-        <div class="product-info">
-          <h3>Denim</h3>
-          <p>Jeans Fabric</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=300&fit=crop" alt="Cotton Linen">
-        <div class="product-info">
-          <h3>Cotton Linen</h3>
-          <p>Natural Blend</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e50?w=400&h=300&fit=crop" alt="Jacquard">
-        <div class="product-info">
-          <h3>Jacquard</h3>
-          <p>Woven Pattern</p>
+      <div class="category-card reveal">
+        <div class="category-badge">⚡</div>
+        <div>
+          <h3>Functional Textiles</h3>
+          <p>Water-repellent, UV-protective, anti-static, and flame-retardant finishes. Custom formulations for your technical requirements.</p>
+          <div class="category-tags">
+            <span class="category-tag">Waterproof</span>
+            <span class="category-tag">UV Cut</span>
+            <span class="category-tag">FR</span>
+            <span class="category-tag">Anti-static</span>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-  
-  <!-- Categories -->
-  <section class="categories">
-    <div class="section-header">
-      <h2>Product Categories</h2>
-    </div>
-    <div class="categories-grid">
-      <div class="category-card">
-        <div class="category-icon">🧵</div>
-        <h3>Polyester Fabrics</h3>
-        <p>Pongee, Taft, Chiffon</p>
-      </div>
-      <div class="category-card">
-        <div class="category-icon">🏭</div>
-        <h3>Viscose / Rayon</h3>
-        <p>Linings, Satins</p>
-      </div>
-      <div class="category-card">
-        <div class="category-icon">👔</div>
-        <h3>Cotton Blends</h3>
-        <p>Denim, Linen Mix</p>
-      </div>
-      <div class="category-card">
-        <div class="category-icon">🎨</div>
-        <h3>Functional</h3>
-        <p>Waterproof, UV Protection</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Why Choose Us -->
-  <section class="why-us">
-    <div class="section-header">
-      <h2>Why Choose Us</h2>
-    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  WHY XUMSUNG
+  ═══════════════════════════════════════ -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-label reveal">Why Xumsung</div>
+    <h2 class="reveal">We're not middlemen.<br>We're a fiber factory.</h2>
+    <p class="section-intro reveal">Generic sourcing agents guess. We measure. When your brand depends on fiber consistency, guesswork costs you customers.</p>
+
     <div class="why-grid">
-      <div class="why-item">
-        <div class="why-icon">🏭</div>
-        <h3>Factory Direct</h3>
-        <p>Competitive pricing, no middleman</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">✓</div>
-        <h3>ISO Certified</h3>
-        <p>Quality management system</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">📦</div>
-        <h3>Global Shipping</h3>
-        <p>30+ countries served</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">💬</div>
-        <h3>24/7 Support</h3>
-        <p>Dedicated account managers</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Certifications -->
-  <section class="certifications">
-    <h2>Certifications</h2>
-    <div class="cert-tags">
-      <span class="cert-tag">ISO 9001</span>
-      <span class="cert-tag">OEKO-TEX</span>
-      <span class="cert-tag">GRS</span>
-      <span class="cert-tag">SGS</span>
-    </div>
-  </section>
-  
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="contact-grid">
-      <div class="contact-item">
-        <h3>Email</h3>
-        <p>info@xumsung.com</p>
-      </div>
-      <div class="contact-item">
-        <h3>Phone</h3>
-        <p>+86 512-88888888</p>
-      </div>
-      <div class="contact-item">
-        <h3>Address</h3>
-        <p>Suzhou, Jiangsu, China</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Inquiry Form -->
-  <section class="inquiry">
-    <div class="section-header">
-      <h2>Request a Quote</h2>
-      <p>Fill in your requirements and we'll get back to you within 24 hours</p>
-    </div>
-    <form class="inquiry-form" action="https://formspree.io/f/xpwzgvrz" method="POST">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Name *</label>
-          <input type="text" name="name" required>
-        </div>
-        <div class="form-group">
-          <label>Company</label>
-          <input type="text" name="company">
+      <div class="why-card reveal">
+        <div class="why-marker">🧪</div>
+        <div>
+          <h3>Synthetic Fiber Is All We Do</h3>
+          <p>We can tell 75D from 150D by hand, spot recycled PET vs virgin, and verify elastane content. Generic agents can't do this.</p>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Email *</label>
-          <input type="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label>Phone</label>
-          <input type="tel" name="phone">
+      <div class="why-card reveal">
+        <div class="why-marker">🔥</div>
+        <div>
+          <h3>Burn-Test Verification</h3>
+          <p>Every batch gets a fiber burn test. Smell, flame color, ash residue — we confirm what the supplier claims. No more "100% cotton" that's actually poly-blend.</p>
         </div>
       </div>
-      <div class="form-group">
-        <label>Interested Products</label>
-        <select name="product">
-          <option value="">Select a product</option>
-          <option value="chun-yafang">Chun Yafang</option>
-          <option value="polyester-taft">Polyester Taft</option>
-          <option value="shu-mei-chou">Shu Mei Chou</option>
-          <option value="viscose-lining">Viscose Lining</option>
-          <option value="chiffon">Chiffon</option>
-          <option value="cotton-linen">Cotton Linen</option>
-          <option value="denim">Denim</option>
-          <option value="jacquard">Jacquard</option>
-          <option value="other">Other</option>
-        </select>
+      <div class="why-card reveal">
+        <div class="why-marker">📐</div>
+        <div>
+          <h3>Spec-Accurate QC</h3>
+          <p>We measure GSM, yarn count (D/Tex), weave density, and shrinkage rate. You get a QC sheet with real numbers, not marketing copy.</p>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Message / Requirements</label>
-        <textarea name="message" rows="4" placeholder="Please specify quantity, specifications, etc."></textarea>
+      <div class="why-card reveal">
+        <div class="why-marker">🏭</div>
+        <div>
+          <h3>Factory, Not Office</h3>
+          <p>We run a real production line in Suzhou. We understand lead times, dye lot variations, and MOQ realities — because we deal with them every day.</p>
+        </div>
       </div>
-      <button type="submit" class="submit-btn">Send Inquiry</button>
+      <div class="why-card reveal">
+        <div class="why-marker">🌍</div>
+        <div>
+          <h3>30+ Countries Served</h3>
+          <p>From Bangladesh garment exporters to European fashion houses — we know international shipping, customs documentation, and DDP terms.</p>
+        </div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-marker">💬</div>
+        <div>
+          <h3>WhatsApp-First Communication</h3>
+          <p>Send links, receive QC photos, approve shipments — all via WhatsApp. Real-time updates, 12-hour response, no email ping-pong.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  CERTIFICATIONS
+  ═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label reveal">Credentials</div>
+    <h2 class="reveal" style="margin-bottom:48px">Certifications &amp; Standards</h2>
+    <div class="cert-row">
+      <div class="cert-item reveal">
+        <div class="cert-name">ISO 9001</div>
+        <div class="cert-desc">Quality Management</div>
+      </div>
+      <div class="cert-item reveal">
+        <div class="cert-name">OEKO-TEX</div>
+        <div class="cert-desc">Standard 100</div>
+      </div>
+      <div class="cert-item reveal">
+        <div class="cert-name">GRS</div>
+        <div class="cert-desc">Global Recycled</div>
+      </div>
+      <div class="cert-item reveal">
+        <div class="cert-name">SGS</div>
+        <div class="cert-desc">Third-Party Testing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  CONTACT / INQUIRY
+  ═══════════════════════════════════════ -->
+<section class="section cta-section" id="contact">
+  <div class="container reveal">
+    <div class="cta-card">
+      <h2>Source with confidence</h2>
+      <p>Send 1688 links or tell us what you need. We reply within 12 hours — usually faster.</p>
+      <a href="https://wa.me/8613862506631" class="btn btn-primary" target="_blank" rel="noopener">
+        💬 WhatsApp <span class="btn-arrow">→</span>
+      </a>
+      <div class="cta-links">
+        <a href="mailto:info@xumsung.com">✉️ info@xumsung.com</a>
+        <span class="cta-sep" aria-hidden="true">|</span>
+        <a href="tel:+8613862506631">📞 +86 138 6250 6631</a>
+        <span class="cta-sep" aria-hidden="true">|</span>
+        <span>📍 Suzhou, China</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  INQUIRY FORM
+  ═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label reveal">Request a Quote</div>
+    <h2 class="reveal" style="text-align:center;margin-bottom:12px">Tell us what you need</h2>
+    <p class="reveal" style="text-align:center;color:var(--slate-muted);font-size:.92rem;margin-bottom:48px">We'll get back within 24 hours with a tailored proposal.</p>
+
+    <form class="inquiry-form reveal" action="https://formspree.io/f/xpwzgvrz" method="POST">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="+ country code">
+        </div>
+        <div class="form-group full">
+          <label for="product">Interested Product</label>
+          <select id="product" name="product">
+            <option value="">Select a product category</option>
+            <option value="polyester">Polyester Fabrics (Pongee, Taffeta, Chiffon)</option>
+            <option value="nylon-spandex">Nylon &amp; Spandex Blends</option>
+            <option value="viscose-lining">Viscose / Rayon Linings</option>
+            <option value="functional">Functional Textiles (Waterproof, UV, FR)</option>
+            <option value="1688-sourcing">1688 Link Sourcing — You send links, we source</option>
+            <option value="other">Other / Custom Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="message">Specifications &amp; Requirements</label>
+          <textarea id="message" name="message" placeholder="Please include: fabric type, desired weight (GSM), width, quantity, color requirements, and any certification needs."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-submit">Send Inquiry</button>
     </form>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 Suzhou Xumsung Import & Export Co., Ltd. All rights reserved.</p>
-  </footer>
-  
-  <script>
-    // Smooth scroll with header offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const target = document.querySelector(targetId);
-        if (target) {
-          const headerHeight = 80;
-          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════
+  FOOTER
+  ═══════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 <em>Xumsung</em> — Suzhou Xumsung Import &amp; Export Co., Ltd.</span>
+    <span>15+ years of fiber know-how</span>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-top" id="backTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Header scroll
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Back to top
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('show', window.scrollY > 700);
+});
+backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// Mobile nav
+const navToggle = document.getElementById('navToggle');
+const navList = document.getElementById('navList');
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  navList.classList.toggle('open');
+});
+navList.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    navList.classList.remove('open');
+  });
+});
+
+// Smooth scroll offset
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const offset = 100;
+      const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: pos, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
 </body>
 </html>
